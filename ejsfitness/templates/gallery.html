@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ej's Fitness</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body style="background-color:white;">
+<input type="radio" name="photos" id="check1" checked>
+<input type="radio" name="photos" id="check2" >
+<input type="radio" name="photos" id="check3" >
+<input type="radio" name="photos" id="check4" >
+<input type="radio" name="photos" id="check5" >
+<input type="radio" name="photos" id="check6" >
+<input type="radio" name="photos" id="check7" >
+
+<div  class="container">
+    <h1>EJ'S Photo Gallery</h1>
+
+
+    <div class="top-content">
+         <h3>Photo Gallery</h3>
+         <a href="/">Home</a>
+         <button href ="/" class="button button1">Home</button>
+
+
+         <label for="check1">All Photos</label>
+         {% for f in gala %}
+         <label for="check2">{{f.name1}}</label>
+         <label for="check3">{{f.name2}}</label>
+         <label for="check4">{{f.name3}}</label>
+         <label for="check5">{{f.name4}}</label>
+         <label for="check6">{{f.name5}}</label>
+         <label for="check7">{{f.name6}}</label>
+    </div>
+
+    <div class="photo-gallery">
+        <div class="pic event1">
+            <img src="{{f.image1.url}}">
+        </div>
+        <div class="pic event1">
+            <img src="{{f.image2.url}}">
+        </div>
+        <div class="pic event1">
+            <img src="{{f.image3.url}}">
+        </div>
+        <div class="pic event1">
+            <img src="{{f.image4.url}}">
+        </div>
+
+         <div class="pic event2">
+            <img src="{{f.image01.url}}">
+        </div>
+        <div class="pic event2">
+            <img src="{{f.image02.url}}">
+        </div>
+        <div class="pic event2">
+            <img src="{{f.image03.url}}">
+        </div>
+        <div class="pic event2">
+            <img src="{{f.image04.url}}">
+        </div>
+
+         <div class="pic event3">
+            <img src="{{f.image001.url}}">
+        </div>
+        <div class="pic event3">
+            <img src="{{f.image002.url}}">
+        </div>
+        <div class="pic event3">
+            <img src="{{f.image003.url}}">
+        </div>
+        <div class="pic event3">
+            <img src="{{f.image004.url}}">
+        </div>
+
+         <div class="pic event4">
+            <img src="{{f.image0001.url}}">
+        </div>
+        <div class="pic event4">
+            <img src="{{f.image0002.url}}">
+        </div>
+        <div class="pic event4">
+            <img src="{{f.image0003.url}}">
+        </div>
+        <div class="pic event4">
+            <img src="{{f.image0004.url}}">
+        </div>
+
+         <div class="pic event5">
+            <img src="{{f.image00001.url}}">
+        </div>
+        <div class="pic event5">
+            <img src="{{f.image00002.url}}">
+        </div>
+        <div class="pic event5">
+            <img src="{{f.image00003.url}}">
+        </div>
+        <div class="pic event5">
+            <img src="{{f.image00004.url}}">
+        </div>
+
+         <div class="pic event6">
+            <img src="{{f.image000001.url}}">
+        </div>
+        <div class="pic event6">
+            <img src="{{f.image000002.url}}">
+        </div>
+        <div class="pic event6">
+            <img src="{{f.image000003.url}}">
+        </div>
+        <div class="pic event6">
+            <img src="{{f.image000004.url}}">
+        </div>
+
+    </div>
+            {% endfor %}
+
+</div>
+
+</body>
+</html>
