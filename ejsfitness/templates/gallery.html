@@ -5,122 +5,856 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ej's Fitness</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>EJ'S Fitness Club</title>
+    <link rel="stylesheet" href="{% static 'css/new.css' %}">
+
+    <meta Content-Type: text/html; charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Font links -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- CSS links-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css " integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- fancybox -->
+    <link rel='stylesheet prefetch' href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css">
+  <!-- magnific-popup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
 
 </head>
-<body style="background-color:white;">
-<input type="radio" name="photos" id="check1" checked>
-<input type="radio" name="photos" id="check2" >
-<input type="radio" name="photos" id="check3" >
-<input type="radio" name="photos" id="check4" >
-<input type="radio" name="photos" id="check5" >
-<input type="radio" name="photos" id="check6" >
-<input type="radio" name="photos" id="check7" >
 
-<div  class="container">
-    <h1>EJ'S Photo Gallery</h1>
+<body>
+  <section class="portfolio-section" id="portfolio">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-lg-12 text-center">
+
+          <h1 style="color:red;">EJ'S Photo Gallery</h1>
+          <h3>PHOTOS OF OUR FUNCTIONS AND EVENTS</h3>
+        </div>
+      </div>
+        {% for f in gal %}
+      <div class="portfolio-menu mt-2 mb-4">
+
+        <nav class="controls">
+          <button type="button" class="control outline" data-filter="all">All</button>
+          <button type="button" class="control outline" data-filter=".event1">{{f.name1}}</button>
+          <button type="button" class="control outline" data-filter=".event2">{{f.name2}}</button>
+          <button type="button" class="control outline" data-filter=".event3">{{f.name3}}</button>
+          <button type="button" class="control outline" data-filter=".event4">{{f.name4}}</button>
+          <button type="button" class="control outline" data-filter=".event5">{{f.name5}}</button>
+          <a href="/" style="color:red;" class="nav-item nav-link active">Home</a>
+
+        </nav>
+      </div>
+      <ul class="row portfolio-item">
+
+        <!--set1-->
+        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image201.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description201}}</p>
+
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image201.url}}">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image101.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description101}}</p>
+
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image101.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image301.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description301}}</p>
+                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image301.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+         <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image501.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description501}}</p>
+
+                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image501.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event4 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image401.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description401}}</p>
+
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image401.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!--set2-->
+        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd ">
+          <img src="{{f.image202.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description202}}</p>
+
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image202.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd ">
+          <img src="{{f.image102.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description102}}</p>
+
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image102.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd ">
+          <img src="{{f.image302.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description302}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image302.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image502.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description502}}</p>
+                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image502.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event4 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image402.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description402}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image402.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!--set3-->
+        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image203.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description203}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image203.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image103.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description103}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image103.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image303.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description303}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image303.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image503.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description503}}</p>
+                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image503.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event4 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image403.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description403}}</p>
+                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image403.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!--set4-->
+        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image204.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description204}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image204.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image104.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description104}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image104.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image304.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description304}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image304.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+       <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image504.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description504}}</p>
+                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image504.url}}" data-size="1200x600">
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+       </li>
+       <li class="mix event4 col-xl-3 col-md-4 col-12 col-sm-6 pd">
+          <img src="{{f.image404.url}}" itemprop="thumbnail" alt="Image description" />
+          <div class="portfolio-overlay">
+            <div class="overlay-content">
+              <p class="category">{{f.description404}}</p>
+              <a data-fancybox="item" title="click to zoom-in" href="{{f.image404.url}}" data-size="1200x600">
+
+                <div class="magnify-icon">
+                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>
+                </div>
+              </a>
+            </div>
+          </div>
+       </li>
+      </ul>
+
+      <!--set5-->
+<!--      <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image205.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description205}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image205.url}}">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image105.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description105}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image105.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image305.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description305}}</p>-->
+
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image305.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image505.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description505}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image505.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image405.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description405}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image405.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+
+        <!--set6-->
+<!--        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image206.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description206}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image206.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image106.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description106}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image106.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image306.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description306}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image306.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image506.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description506}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image506.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image406.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description406}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image406.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash;set7&ndash;&gt;-->
+<!--        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image207.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description207}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image207.url}}">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image107.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description107}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image107.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image307.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description307}}</p>-->
+
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image307.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image507.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description507}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image507.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image407.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description407}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image407.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash;set8&ndash;&gt;-->
+<!--        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image208.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description208}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image208.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image108.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description108}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image108.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image308.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description308}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image308.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image508.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description508}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image508.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image408.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description408}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image408.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash;set9&ndash;&gt;-->
+<!--        <li class="mix event2 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image209.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description209}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image209.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event1 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image109.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description109}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image109.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event3 col-xl-3 col-md-4 col-12 col-sm-6 pd ">-->
+<!--          <img src="{{f.image309.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description309}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--              <a data-fancybox="item" title="click to zoom-in" href="{{f.image309.url}}" data-size="1200x600">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image509.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description509}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image509.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
+<!--        <li class="mix event5 col-xl-3 col-md-4 col-12 col-sm-6 pd">-->
+<!--          <img src="{{f.image409.url}}" itemprop="thumbnail" alt="Image description" />-->
+<!--          <div class="portfolio-overlay">-->
+<!--            <div class="overlay-content">-->
+<!--              <p class="category">{{f.description409}}</p>-->
+<!--              <a href="#" title="View Project" target="_blank">-->
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-link" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--                  <a data-fancybox="item" title="click to zoom-in" href="{{f.image409.url}}" data-size="1200x600">-->
+
+<!--                <div class="magnify-icon">-->
+<!--                  <p><span><i class="fa fa-search" aria-hidden="true"></i></span></p>-->
+<!--                </div>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </li>-->
 
 
-    <div class="top-content">
-         <h3>Photo Gallery</h3>
-         <a href="/">Home</a>
-         <button href ="/" class="button button1">Home</button>
-
-
-         <label for="check1">All Photos</label>
-         {% for f in gala %}
-         <label for="check2">{{f.name1}}</label>
-         <label for="check3">{{f.name2}}</label>
-         <label for="check4">{{f.name3}}</label>
-         <label for="check5">{{f.name4}}</label>
-         <label for="check6">{{f.name5}}</label>
-         <label for="check7">{{f.name6}}</label>
+        {% endfor %}
     </div>
 
-    <div class="photo-gallery">
-        <div class="pic event1">
-            <img src="{{f.image1.url}}">
-        </div>
-        <div class="pic event1">
-            <img src="{{f.image2.url}}">
-        </div>
-        <div class="pic event1">
-            <img src="{{f.image3.url}}">
-        </div>
-        <div class="pic event1">
-            <img src="{{f.image4.url}}">
-        </div>
+  </section>
 
-         <div class="pic event2">
-            <img src="{{f.image01.url}}">
-        </div>
-        <div class="pic event2">
-            <img src="{{f.image02.url}}">
-        </div>
-        <div class="pic event2">
-            <img src="{{f.image03.url}}">
-        </div>
-        <div class="pic event2">
-            <img src="{{f.image04.url}}">
-        </div>
-
-         <div class="pic event3">
-            <img src="{{f.image001.url}}">
-        </div>
-        <div class="pic event3">
-            <img src="{{f.image002.url}}">
-        </div>
-        <div class="pic event3">
-            <img src="{{f.image003.url}}">
-        </div>
-        <div class="pic event3">
-            <img src="{{f.image004.url}}">
-        </div>
-
-         <div class="pic event4">
-            <img src="{{f.image0001.url}}">
-        </div>
-        <div class="pic event4">
-            <img src="{{f.image0002.url}}">
-        </div>
-        <div class="pic event4">
-            <img src="{{f.image0003.url}}">
-        </div>
-        <div class="pic event4">
-            <img src="{{f.image0004.url}}">
-        </div>
-
-         <div class="pic event5">
-            <img src="{{f.image00001.url}}">
-        </div>
-        <div class="pic event5">
-            <img src="{{f.image00002.url}}">
-        </div>
-        <div class="pic event5">
-            <img src="{{f.image00003.url}}">
-        </div>
-        <div class="pic event5">
-            <img src="{{f.image00004.url}}">
-        </div>
-
-         <div class="pic event6">
-            <img src="{{f.image000001.url}}">
-        </div>
-        <div class="pic event6">
-            <img src="{{f.image000002.url}}">
-        </div>
-        <div class="pic event6">
-            <img src="{{f.image000003.url}}">
-        </div>
-        <div class="pic event6">
-            <img src="{{f.image000004.url}}">
-        </div>
-
-    </div>
-            {% endfor %}
-
-</div>
-
+  <!-- JS Links -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <!-- Mixitup -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.2.2/mixitup.min.js"></script>
+  <!-- fancybox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+  <!-- Fancybox js -->
+  <script>
+    /*Downloaded from https://www.codeseek.co/ezra_siton/mixitup-fancybox3-JydYqm */
+    // 1. querySelector
+    var containerEl = document.querySelector(".portfolio-item");
+    // 2. Passing the configuration object inline
+    //https://www.kunkalabs.com/mixitup/docs/configuration-object/
+    var mixer = mixitup(containerEl, {
+      animation: {
+        effects: "fade translateZ(-100px)",
+        effectsIn: "fade translateY(-100%)",
+        easing: "cubic-bezier(0.645, 0.045, 0.355, 1)"
+      }
+    });
+    // fancybox insilaze & options //
+    $("[data-fancybox]").fancybox({
+      loop: true,
+      hash: true,
+      transitionEffect: "slide",
+      /* zoom VS next////////////////////
+      clickContent - i modify the deafult - now when you click on the image you go to the next image - i more like this approach than zoom on desktop (This idea was in the classic/first lightbox) */
+      clickContent: function(current, event) {
+        return current.type === "image" ? "next" : false;
+      }
+    });
+  </script>
 </body>
+
+
+
 </html>

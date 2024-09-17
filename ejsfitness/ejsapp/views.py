@@ -7,9 +7,9 @@ from . models import Blog
 from . models import Head
 from . models import Part
 from . models import Benefits
-from . models import GalleryPhotos
-from django.core.mail import send_mail
-
+from . models import Gallery
+from . models import Footer
+from . models import LastPhotos
 
 # Create your views here.
 def index(request):
@@ -21,41 +21,50 @@ def index(request):
     head=Head.objects.all()
     part = Part.objects.all()
     benefits=Benefits.objects.all()
-
+    footer = Footer.objects.all()
+    lastphotos = LastPhotos.objects.all()
     return render(request,'index.html',{'result':trainr,'tes':testimonial,'blo':blog,
-                                        'main':mainphotos,'trainers':trainersgroup,'hea':head,'par':part,'ben':benefits})
+                                        'main':mainphotos,'trainers':trainersgroup,'hea':head,'par':part,'ben':benefits,"last":lastphotos})
 
 def about(request):
     trainr = Trainer.objects.all()
     trainersgroup = TrainersGroup.objects.all()
     part = Part.objects.all()
-    return render(request,'about.html',{'result':trainr,'trainers':trainersgroup,'par':part})
+    lastphotos = LastPhotos.objects.all()
+    return render(request,'about.html',{'result':trainr,'trainers':trainersgroup,'par':part,"last":lastphotos})
 
 
 def feature(request):
     benefits = Benefits.objects.all()
     testimonial = Testimonial.objects.all()
-    return render(request,'feature.html',{'tes':testimonial,'ben':benefits })
+    lastphotos = LastPhotos.objects.all()
+    return render(request,'feature.html',{'tes':testimonial,'ben':benefits,"last":lastphotos})
 
 
 def blog(request):
     blog = Blog.objects.all()
-    return render(request,'blog.html',{'blo':blog})
+    lastphotos = LastPhotos.objects.all()
+    return render(request,'blog.html',{'blo':blog,"last":lastphotos})
 
 def training(request):
     head = Head.objects.all()
-    return render(request,'training.html',{'hea':head})
+    lastphotos = LastPhotos.objects.all()
+    return render(request,'training.html',{'hea':head,"last":lastphotos})
 
 def contact(request):
-    return render(request,'contact.html')
+    lastphotos = LastPhotos.objects.all()
+    return render(request,'contact.html',{"last":lastphotos})
 
 def gallery(request):
-    gallery = GalleryPhotos.objects.all()
-    return render(request,'gallery.html',{'gala':gallery})
+    gallery = Gallery.objects.all()
+    lastphotos = LastPhotos.objects.all()
+    return render(request, 'gallery.html', {'gal': gallery,"last":lastphotos})
 
+def new(request):
 
+    return render(request,'new.html')
 
+def footer(request):
 
-
-
+    return render(request,'footer.html')
 

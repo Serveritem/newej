@@ -7,7 +7,9 @@ from . models import TrainersGroup
 from . models import Head
 from . models import Part
 from . models import Benefits
-from . models import GalleryPhotos
+from . models import Gallery
+from . models import Footer
+from . models import LastPhotos
 
 admin.site.register(MainPhotos)
 admin.site.register(TrainersGroup)
@@ -17,4 +19,6 @@ admin.site.register(Blog)
 admin.site.register(Head)
 admin.site.register(Part)
 admin.site.register(Benefits)
-admin.site.register(GalleryPhotos)
+admin.site.register(Gallery)
+admin.site.register(Footer)
+admin.site.register(LastPhotos)

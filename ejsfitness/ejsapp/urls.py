@@ -9,5 +9,6 @@ urlpatterns = [
     path('training/',views.training,name='training'),
     path('feature/',views.feature,name='feature'),
     path('gallery/',views.gallery,name='gallery'),
-
+    path('new/',views.new,name='new'),
+    path('footer/',views.footer,name='footer'),
 ]

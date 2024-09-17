@@ -1,3 +1,4 @@
+{% block world %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -37,20 +38,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto p-4 bg-secondary">
+                <div class="navbar-nav ml-auto p-4">
                     <a href="/" class="nav-item nav-link">Home</a>
                     <a href="/about/" class="nav-item nav-link">About Us</a>
                     <a href="/feature/" class="nav-item nav-link">Our Features</a>
                     <a href="/training/" class="nav-item nav-link">Training</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu text-capitalize">
-                            <a href="/blog/" class="dropdown-item">Blog</a>
-                            <a href="/gallery/" class="dropdown-item">Gallery</a>
-                        </div>
-                    </div>
+                    <a href="/blog/" class="nav-item nav-link">Blog</a>
+                    <a href="/gallery/" class="nav-item nav-link">Gallery</a>
                     <a href="/contact/" class="nav-item nav-link active">Contact</a>
-                    <a href="/" class="nav-item nav-link">Client Login</a>
+<!--                    <a href="http://195.35.45.178:8080/login" class="nav-item nav-link">Login</a>-->
+
             </div>
         </nav>
     </div>
@@ -102,7 +99,7 @@
             </div>
 
             <div class="col-md-6 pb-5">
-                <div class="contact-form">
+                <div class="submit-form">
                     <div id="success"></div>
                     <form name="sentMessage" id="submit-form"  action="" novalidate="novalidate">
 
@@ -123,7 +120,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <button class="btn btn-outline-primary"  href="">Send Message</button>
+                            <button class="btn btn-outline-primary"  >Send Message</button>
 
 
                         </div>
@@ -134,11 +131,11 @@
         $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbw-P6xU4_n1A0-zhiYC4ybtXhUe6hEnAKJ3OyIPhdo6jOQwCWIVhqidSdKPNRtFN5g1Ww/exec",
+                url:"https://script.google.com/macros/s/AKfycbxXokNTEd3bp6AoT6aCqHnChH2B_EgeJwFyfjzNMNbHvypfxBYoklI7clktiRqX6kGm/exec",
                 data:$("#submit-form").serialize(),
                 method:"post",
                 success:function (response){
-                    alert("Form submitted successfully")
+                    alert("Form Submitted Successfully...!! We Will Connect You Soon")
                     window.location.reload()
                     //window.location.href="http://127.0.0.1:8000/"
                 },
@@ -155,64 +152,11 @@
     <!-- Contact End -->
 
 
-    <!-- Footer Start -->
-    <div class="footer container-fluid mt-5 py-5 px-sm-3 px-md-5 text-white">
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>2nd Floor<br>St.Thomas Shopping Complex<br>Chempu<br></p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+919947680564<br></p>
-                <p><i class="fa fa-envelope mr-2"></i>ejsfitnesschempu@gmail.com<br></p>
+{% include "footer.html" %}
+{% endblock %}
 
-                <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="https://www.instagram.com/ejs_fitness_club?igsh=N2NkeXRyOWxkcWdp "><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="https://www.facebook.com/Ejsfitnessclub?mibextid=ZbWKwL "><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="https://maps.app.goo.gl/ea7n3ZtCqZaEDqTk8"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-twitter"></i></a>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Quick Links</h4>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="/about/"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="/feature/"><i class="fa fa-angle-right mr-2"></i>Our Features</a>
-                    <a class="text-white mb-2" href="/training/"><i class="fa fa-angle-right mr-2"></i>Training</a>
-                    <a class="text-white" href="/contact/"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Popular Links</h4>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="/about/"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="/feature/"><i class="fa fa-angle-right mr-2"></i>Our Features</a>
-                    <a class="text-white mb-2" href="/training/"><i class="fa fa-angle-right mr-2"></i>Training</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                </div>
-            </div>
-           <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Opening Hours</h4>
-                <h5 class="text-white">Monday - Saturday</h5>
-                <p>5.00 AM - 10.00 AM</p>
-                 <p>5.00 PM - 9.00 PM</p>
-                <h5 class="text-white">Sunday</h5>
-                <p>5.00 PM - 7.00 PM(Karate Only)</p>
-            </div>
-        </div>
-        <div class="container border-top border-dark pt-5">
-            <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">Ejs Fitness Club</a>. All Rights Reserved. Designed by
-                <a class="text-white font-weight-bold" href="https://ejsfitness.com">Bibin Joseph</a>
-            </p>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-outline-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+<!-- Back to Top -->
+    <a href="/" class="btn btn-outline-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -227,7 +171,6 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
-
 </body>
 
 </html>
