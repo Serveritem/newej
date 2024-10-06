@@ -8,8 +8,9 @@ from . models import Head
 from . models import Part
 from . models import Benefits
 from . models import Gallery
-from . models import Footer
 from . models import LastPhotos
+
+from . models import Programs
 
 admin.site.register(MainPhotos)
 admin.site.register(TrainersGroup)
@@ -20,5 +21,6 @@ admin.site.register(Head)
 admin.site.register(Part)
 admin.site.register(Benefits)
 admin.site.register(Gallery)
-admin.site.register(Footer)
 admin.site.register(LastPhotos)
+
+admin.site.register(Programs)

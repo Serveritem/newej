@@ -5,10 +5,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EJ's Fitness Club</title>
+    <title>EJ'S Fitness Club</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free Website Template" name="keywords">
-    <meta content="Free Website Template" name="description">
+    <meta content="ejs fitness, ejs fitness club, gym website, fitness center, personal trainer,
+    fitness classes, strength training, cardio workouts, weight loss programs, health and fitness, gym workouts,
+    personal training, bodybuilding" name="keywords">
+    <meta content="For All Your Fitness Goals" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -22,6 +24,15 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+
+<!--    333333333333333333333333-->
+     <!-- bootstrap core css blue and grey color css optional when required-->
+<!--  <link rel="stylesheet" type="text/css" href="{% static 'hlo/css/1bootstrap.css' %}" />-->
+     <!-- Custom styles for this template -->
+  <link href="{% static 'hlo/css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+  <link href="{% static 'hlo/css/responsive.css' %}" rel="stylesheet" />
+
 </head>
 
 <body style="background-color:white;">
@@ -64,84 +75,130 @@
     </div>
     <!-- Page Header End -->
 
+   <!-- Main Heddings section -->
+    <div class="container gym-class mb-5">
+  <section class="client_section layout_padding-bottom">
+<!--    <div class="container-fluid">-->
+        {% block Programs %}
+<!--      <div class="row">-->
+          {% for v in pro %}
+        <div class="col-md-10 col-lg-8 mx-auto">
+<!--          <div class="client_container">-->
+
+<!--            <div class="client_box-container">-->
+              <div class="carousel-wrap ">
+                <div class="owl-carousel">
+
+                  <div class="item" >
+<!--                      <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary text-left text-white py-5 px-5" style="height:500px;width:550px;">-->
+                    <div class="box d-flex flex-column text-left text-white py-5 px-5" style="background-color:red">
+                        <i class="flaticon-six-pack"></i>
+                      <div class="img-box">
+                        <img src="{{v.image1.url}}" alt="" />
+                      </div>
+                      <div class="detail-box">
+                        <h1 class="display-4 mb-3 text-white font-weight-bold" style="color:red">
+                          {{v.name}}
+                        </h1>
+                            <p>
+                           {{v.description}}
+                            </p>
+                        <img src="{% static 'dude/22.png' %}" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+          {% endfor %}
+<!--      </div>-->
+        {% endblock %}
+<!--    </div>-->
+   </section>
+</div>
+  <!-- Main Heddings section -->
+
 
     <!-- Gym Class Start -->
-    <div class="container gym-class mb-5">
-        {% block Headings %}
-        <div class="row px-3">
-            {% for p in hea %}
+<!--    <div class="container gym-class mb-5">-->
+<!--        {% block Headings %}-->
+<!--        <div class="row px-3">-->
+<!--            {% for p in hea %}-->
 
-            <div class="col-md-6 p-0">
-                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary text-left text-white py-5 px-5">
-                    <i class="flaticon-six-pack"></i>
-                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name1}}</h3>
-                    <p>
-                      {{p.description1}}
-                    </p>
-                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>
-                </div>
-            </div>
+<!--            <div class="col-md-6 p-0">-->
+<!--                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary text-left text-white py-5 px-5" style="height:1000px;width:280px">-->
+<!--                    <i class="flaticon-six-pack"></i>-->
+<!--                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name1}}</h3>-->
+<!--                    <p>-->
+<!--                      {{p.description1}}-->
+<!--                    </p>-->
+<!--                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="col-md-6 p-0">
-                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-secondary text-left text-white py-5 px-5">
-                    <i class="flaticon-bodybuilding"></i>
-                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name2}}</h3>
-                    <p>
-                       {{p.description2}}
-                    </p>
-                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>
-                </div>
-            </div>
+<!--            <div class="col-md-6 p-0">-->
+<!--                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-secondary text-left text-white py-5 px-5" >-->
+<!--                    <i class="flaticon-bodybuilding"></i>-->
+<!--                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name2}}</h3>-->
+<!--                    <p>-->
+<!--                       {{p.description2}}-->
+<!--                    </p>-->
+<!--                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="col-md-6 p-0">
-                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-secondary text-left text-white py-5 px-5">
-                    <i class="flaticon-bodybuilding"></i>
-                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name3}}</h3>
-                    <p>
-                      {{p.description3}}
-                    </p>
-                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>
-                </div>
-            </div>
+<!--            <div class="col-md-6 p-0">-->
+<!--                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-secondary text-left text-white py-5 px-5">-->
+<!--                    <i class="flaticon-bodybuilding"></i>-->
+<!--                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name3}}</h3>-->
+<!--                    <p>-->
+<!--                      {{p.description3}}-->
+<!--                    </p>-->
+<!--                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="col-md-6 p-0">
-                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary text-left text-white py-5 px-5">
-                    <i class="flaticon-six-pack"></i>
-                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name4}}</h3>
-                    <p>
-                      {{p.description4}}
-                    </p>
-                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>
-                </div>
-            </div>
-            <div class="col-md-6 p-0">
-                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary  text-left text-white py-5 px-5">
-                    <i class="flaticon-bodybuilding"></i>
-                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name5}}</h3>
-                    <p>
-                      {{p.description5}}
-                    </p>
-                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>
-                </div>
-            </div>
+<!--            <div class="col-md-6 p-0">-->
+<!--                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary text-left text-white py-5 px-5">-->
+<!--                    <i class="flaticon-six-pack"></i>-->
+<!--                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name4}}</h3>-->
+<!--                    <p>-->
+<!--                      {{p.description4}}-->
+<!--                    </p>-->
+<!--                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-6 p-0">-->
+<!--                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-primary  text-left text-white py-5 px-5">-->
+<!--                    <i class="flaticon-bodybuilding"></i>-->
+<!--                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name5}}</h3>-->
+<!--                    <p>-->
+<!--                      {{p.description5}}-->
+<!--                    </p>-->
+<!--                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="col-md-6 p-0">
-                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-secondary text-left text-white py-5 px-5">
-                    <i class="flaticon-six-pack"></i>
-                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name6}}</h3>
-                    <p>
-                      {{p.description6}}
-                    </p>
-                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>
-                </div>
-            </div>
+<!--            <div class="col-md-6 p-0">-->
+<!--                <div class="gym-class-box d-flex flex-column align-items-start justify-content-center bg-secondary text-left text-white py-5 px-5">-->
+<!--                    <i class="flaticon-six-pack"></i>-->
+<!--                    <h3 class="display-4 mb-3 text-white font-weight-bold">{{p.name6}}</h3>-->
+<!--                    <p>-->
+<!--                      {{p.description6}}-->
+<!--                    </p>-->
+<!--                    <a href="tel://+919947680564" class="btn btn-lg btn-outline-light mt-4 px-4" onclick="window.open('thispage.htm','_self';">Contact Now</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            {% endfor %}
+<!--            {% endfor %}-->
 
 
-        </div>
-        {% endblock %}
-    </div>
+<!--        </div>-->
+<!--        {% endblock %}-->
+<!--    </div>-->
     <!-- Gym Class End -->
 
 
@@ -682,6 +739,8 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
+
+  </script>
 </body>
 
 </html>

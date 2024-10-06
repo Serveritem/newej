@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ejsfitness.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ej_fitness',
+        'NAME': 'ejs_fitness',
         'USER': 'root',
         'PASSWORD': '',
     }
