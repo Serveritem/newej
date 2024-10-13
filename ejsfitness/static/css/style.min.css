@@ -7,7 +7,7 @@
 
  @media (min-width:768px){.bmi::after{position:absolute;content:"";width:50%;height:100%;top:0;left:0;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../img/room1.jpg);background-position:center;background-repeat:no-repeat;background-size:cover;z-index:-1}}
 
- .team .card-social{position:absolute;width:100%;height:0;top:100%;left:0;opacity:0;transition:.5s;z-index:1}.team .card:hover .card-social{top:0;height:calc(100% - 100px);opacity:1;background:rgba(0,0,0,.3)}.team .card-body{position:relative;z-index:2}@media (max-width:767.98px){.testimonial{background:#111}}@media (min-width:768px){.testimonial::after{position:absolute;content:"";width:50%;height:100%;top:0;right:0;background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url(../img/karategroup.jpg);background-position:center;background-repeat:no-repeat;background-size:cover;z-index:-1}}
+ .team .card-social{position:absolute;width:100%;height:0;top:100%;left:0;opacity:0;transition:.5s;z-index:1}.team .card:hover .card-social{top:0;height:calc(100% - 100px);opacity:1;background:rgba(0,0,0,.3)}.team .card-body{position:relative;z-index:2}@media (max-width:767.98px){.testimonial{background:#111}}@media (min-width:768px){.testimonial::after{position:absolute;content:"";width:50%;height:100%;top:0;right:0;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../img/karategroup.jpg);background-position:center;background-repeat:no-repeat;background-size:cover;z-index:-1}}
 
  .testimonial-text::before{position:absolute;content:"";width:0;height:0;top:-20px;left:30px;border:10px solid;border-color:transparent transparent #343a40 transparent;z-index:2}
 
